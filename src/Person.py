@@ -1,7 +1,7 @@
 # import les classes
+import random
 
 class Person:
-    def __init__(self, nom, prenom, vie):
+    def __init__(self, nom, vie):
         self.nom = nom
-        self.prenom = prenom
         self.vie = vie
