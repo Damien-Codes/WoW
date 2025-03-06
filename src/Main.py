@@ -10,67 +10,45 @@ class Game:
     # start game
     @staticmethod
     def start_game():
-        # Création de personnage et de l'équipement
+        # Create Character and weapon
 
         hero = create_hero()
-        epee = create_sword()
-        monstre = create_monster()
-        gourdin = create_club()
+        sword = create_sword()
+        monster = create_monster()
+        club = create_club()
 
-        print("Début du combat : ", hero.name + " utilise ", epee.name + " comme office d'arme contre", monstre.name + " utilise ", gourdin.name + " comme office d'arme.")
-        print("| -------------------------------|")
-        print("| Hero :", hero.name + " | vie :", str(hero.health) + " restant |")
-        print("| Monstre :", monstre.name + " | vie :", str(monstre.health) + " restant |")
-        print("| -------------------------------|")
+        print(f"Start fight : {hero.name} used {sword.name} against {monster.name} used {club.name}")
+        print(f"| -------------------------------|")
+        print(f"| Hero : {hero.name} | Health : {hero.health} |")
+        print(f"| Monster : {monster.name} | Health : {monster.health} |")
+        print(f"| -------------------------------|")
 
-        print("Au tours de", hero.name + " d'attaquer")
+        print(f"{hero.name} attacks first !") # make a random function for starting turn between hero and monster
 
 
 #Round 1
-        # Attaque du Hero
-        print(f"{hero.name} inflige {hero.attack_hero(monstre)} dégâts a {monstre.name}")
-        print(f"Le monstre lui reste  {monstre.health} vie")
-        # Attaque du monstre
-        print(f"{monstre.name} inflige {monstre.attack_monster(hero)} dégâts a {hero.name}")
-        print(f"Le hero lui reste  {hero.health} vie")
+        # Attack hero
+        print(f"{hero.name} inflicted {hero.attack_hero(monster)} damage at {monster.name}")
+        print(f"The monster remains {monster.health} health")
+        # Attack monster
+        print(f"{monster.name} inflicted {monster.attack_monster(hero)} damage at {hero.name}")
+        print(f"The monster remains {hero.health} health")
 
 #Round 2
-        # Attaque du Hero
-        print(f"{hero.name} inflige {hero.attack_hero(monstre)} dégâts a {monstre.name}")
-        print(f"Le monstre lui reste  {monstre.health} vie")
-        # Attaque du monstre
-        print(f"{monstre.name} inflige {monstre.attack_monster(hero)} dégâts a {hero.name}")
-        print(f"Le hero lui reste  {hero.health} vie")
+        # Attack hero
+        print(f"{hero.name} inflicted {hero.attack_hero(monster)} damage at {monster.name}")
+        print(f"The monster remains {monster.health} health")
+        # Attack monster
+        print(f"{monster.name} inflicted {monster.attack_monster(hero)} damage at {hero.name}")
+        print(f"The monster remains {hero.health} health")
 
         #Round 3
-        # Attaque du Hero
-        print(f"{hero.name} inflige {hero.attack_hero(monstre)} dégâts a {monstre.name}")
-        print(f"Le monstre lui reste  {monstre.health} vie")
-        # Attaque du monstre
-        print(f"{monstre.name} inflige {monstre.attack_monster(hero)} dégâts a {hero.name}")
-        print(f"Le hero lui reste  {hero.health} vie")
-
-        #Round 4
-        # Attaque du Hero
-        print(f"{hero.name} inflige {hero.attack_hero(monstre)} dégâts a {monstre.name}")
-        print(f"Le monstre lui reste  {monstre.health} vie")
-        # Attaque du monstre
-        print(f"{monstre.name} inflige {monstre.attack_monster(hero)} dégâts a {hero.name}")
-        print(f"Le hero lui reste  {hero.health} vie")
-
-        #print(str(hero.get_vie()))
-        #print(str(monstre.get_vie()))
-        #print(monstre.get_vie() - degatshero)
-        #print("Vie du monstre ", monstre.get_vie())
-        #print(hero.get_vie() - attack_hero())
-
-        #print(attack_hero)
-
-
-        #hero.attaquer(monstre, epee)
-        #print("Il reste ", str(monstre.vie) + "PV à" , monstre.prenom)
-        #monstre.attaquer(hero, gourdin)
-        #print("Il reste ", str(hero.vie) + "PV à" , hero.prenom)
+        # Attack hero
+        print(f"{hero.name} inflicted {hero.attack_hero(monster)} damage at {monster.name}")
+        print(f"The monster remains {monster.health} health")
+        # Attack monster
+        print(f"{monster.name} inflicted {monster.attack_monster(hero)} damage at {hero.name}")
+        print(f"The monster remains {hero.health} health")
 
 
 # Lancer le jeu

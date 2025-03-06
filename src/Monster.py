@@ -1,9 +1,9 @@
 # import class
 import random
-from Person import Person
+from Character import Character
 
 
-class Monster(Person):
+class Monster(Character):
     def __init__(self, name, health):
         super().__init__(name, health)
 
@@ -15,11 +15,11 @@ class Monster(Person):
         target.health = target.health - damage
         return damage
 
-    # Création de monster
+    # Create monster
 def create_monster():
-    print("Création de votre monstre ╬")
-    name = input("Création du nom de votre monstre : ")
+    print(f"Create your monster 🧌")
+    name = input(f"Choose your name : ")
     health = random.randint(80, 100)
     monster1 = Monster(name, health)
-    print("Votre monstre s'appelle désormais", monster1.name + " avec une vie de ", str(monster1.health) + " pv !")
+    print(f"Your monster called {monster1.name} with a health {monster1.health}")
     return monster1

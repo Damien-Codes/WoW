@@ -1,6 +1,6 @@
 # import
 
-class Person:
+class Character:
     def __init__(self, name, health):
         self._name = name
         self._health = health
@@ -19,11 +19,11 @@ class Person:
         if isinstance(new_name, str) and len(new_name) > 0:
             self._name = new_name
         else:
-            print("Erreur : Le nom doit être une chaîne de caractères non vide.")
+            print(f"Error : The name must be a non-empty string.")
 
     @health.setter
     def health(self, new_health):
         if new_health >= 0:
             self._health = new_health
         else:
-            print("Vous êtes mort !!")
+            print("You are dead !!")

@@ -9,12 +9,12 @@ class Club(Weapon):
 
 
 
-# Création d'un gourdin
+# Create club
 def create_club():
-    print("Création de l'équipement du monstre ◘ : ")
-    name = input("choisir le nom de l'équipement : ")
+    print(f"Create your weapon ⚔️")
+    name = input(f"Choose your name : ")
     damage = random.randint(12,28)
     health = random.randint(90, 100)
     club1 = Club(name, damage, 13, 90, health)
-    print("Votre équipement  :", club1.name + " qui fais entre 12 et 28 dégats, un poids de ", str(club1.weight) + " Kg et une vie de ", str(club1.health) + " pv !")
+    print(f"Your weapon ⚔️ : {club1.name} between 12 and 28 damage, a weight of {club1.weight} Kg and a health of {club1.health} hp !")
     return club1
