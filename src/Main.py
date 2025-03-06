@@ -1,21 +1,41 @@
 # Import class and methods
-
-from Hero import create_hero
-from Monster import create_monster
-from Club import create_club
-from Sword import create_sword
+from src.Club import Club
+from src.Hero import Hero
+from src.Monster import Monster
+from src.Sword import Sword
 
 
 class Game:
-    # start game
+    @staticmethod
+    def fight(hero, monster):
+        while True:
+            # Le héros attaque
+            damage_hero = hero.attack(monster)
+            print(f"{hero.name} inflige {damage_hero} dégâts à {monster.name}.")
+
+            if not monster.isAlive():
+                break  # Fin du combat
+
+            # Le monstre attaque
+            damage_monster = monster.attack(hero)
+            print(f"{monster.name} inflige {damage_monster} dégâts à {hero.name}.")
+
+            if not hero.isAlive():
+                break  # Fin du combat
+
+        if monster.isAlive():
+            print(f"{hero.name} est mort ! {monster.name} a gagné ! 💀")
+        if hero.isAlive():
+            print(f"{monster.name} est mort ! {hero.name} a gagné ! 💀")
+
+    # start gamea
     @staticmethod
     def start_game():
         # Create Character and weapon
-
-        hero = create_hero()
-        sword = create_sword()
-        monster = create_monster()
-        club = create_club()
+        hero = Hero.create_hero_n("toto")
+        sword = Sword.create_sword_n("ttt")
+        monster = Monster.create_monster_n("Bob")
+        club = Club.create_club_n("rrrrr")
 
         print(f"Start fight : {hero.name} used {sword.name} against {monster.name} used {club.name}")
         print(f"| -------------------------------|")
@@ -25,32 +45,10 @@ class Game:
 
         print(f"{hero.name} attacks first !") # make a random function for starting turn between hero and monster
 
+        Game.fight(hero, monster)
 
-#Round 1
-        # Attack hero
-        print(f"{hero.name} inflicted {hero.attack_hero(monster)} damage at {monster.name}")
-        print(f"The monster remains {monster.health} health")
-        # Attack monster
-        print(f"{monster.name} inflicted {monster.attack_monster(hero)} damage at {hero.name}")
-        print(f"The monster remains {hero.health} health")
 
-#Round 2
-        # Attack hero
-        print(f"{hero.name} inflicted {hero.attack_hero(monster)} damage at {monster.name}")
-        print(f"The monster remains {monster.health} health")
-        # Attack monster
-        print(f"{monster.name} inflicted {monster.attack_monster(hero)} damage at {hero.name}")
-        print(f"The monster remains {hero.health} health")
-
-        #Round 3
-        # Attack hero
-        print(f"{hero.name} inflicted {hero.attack_hero(monster)} damage at {monster.name}")
-        print(f"The monster remains {monster.health} health")
-        # Attack monster
-        print(f"{monster.name} inflicted {monster.attack_monster(hero)} damage at {hero.name}")
-        print(f"The monster remains {hero.health} health")
 
 
 # Lancer le jeu
-game = Game()
-game.start_game()
+Game.start_game()

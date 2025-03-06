@@ -1,4 +1,5 @@
 # import
+import random
 
 class Character:
     def __init__(self, name, health):
@@ -19,11 +20,16 @@ class Character:
         if isinstance(new_name, str) and len(new_name) > 0:
             self._name = new_name
         else:
-            print(f"Error : The name must be a non-empty string.")
+            raise ValueError (f"Error : The name must be a non-empty string.")
 
     @health.setter
     def health(self, new_health):
-        if new_health >= 0:
-            self._health = new_health
-        else:
-            print("You are dead !!")
+        self._health = new_health
+
+    def attack(self, target):
+        damage = random.randint(25, 30) # TODO chercher l'arme ds inventory
+        target.health -= damage
+        return damage
+
+    def isAlive(self):
+        return self.health > 0

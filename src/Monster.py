@@ -8,18 +8,16 @@ class Monster(Character):
         super().__init__(name, health)
 
 
-    # attack monster
+        # Create monster
     @staticmethod
-    def attack_monster(target):
-        damage = random.randint(5, 10)
-        target.health = target.health - damage
-        return damage
+    def create_monster():
+        print(f"Create your monster 🧌")
+        name = input(f"Choose your name : ")
+        return Monster.create_monster_n(name)
 
-    # Create monster
-def create_monster():
-    print(f"Create your monster 🧌")
-    name = input(f"Choose your name : ")
-    health = random.randint(80, 100)
-    monster1 = Monster(name, health)
-    print(f"Your monster called {monster1.name} with a health {monster1.health}")
-    return monster1
+    @staticmethod
+    def create_monster_n( name):
+        health = random.randint(80, 100)
+        monster1 = Monster(name, health)
+        print(f"Your monster called {monster1.name} with a health {monster1.health}")
+        return monster1
