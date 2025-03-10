@@ -33,3 +33,50 @@ class Character:
 
     def isAlive(self):
         return self.health > 0
+    
+    
+    def fight(hero, monster):
+        # random attacker
+        attacker = Character.first_attack(hero, monster)
+        print(f"{attacker.name} attacks first !")
+
+        if attacker == hero:
+            while True:
+                # attack hero
+                damage_hero = hero.attack(monster)
+                print(f"{hero.name} inflicts  {damage_hero} damage at {monster.name}.")
+
+                if not monster.isAlive():
+                    break
+
+                # Le monstre attaque
+                damage_monster = monster.attack(hero)
+                print(f"{monster.name} inflicts {damage_monster} damage at {hero.name}.")
+
+                if not hero.isAlive():
+                    break
+        else:
+            while True:
+                # Le monstre attaque
+                damage_monster = monster.attack(hero)
+                print(f"{monster.name} inflicts {damage_monster} damage at {hero.name}.")
+
+                if not hero.isAlive():
+                    break
+
+                # Le héros attaque
+                damage_hero = hero.attack(monster)
+                print(f"{hero.name} inflicts {damage_hero} damage at {monster.name}.")
+
+                if not monster.isAlive():
+                    break
+
+        if monster.isAlive():
+            print(f"{hero.name} is dead ! 💀  {monster.name} won ! 🏆")
+        if hero.isAlive():
+            print(f"{monster.name} is dead ! 💀  {hero.name} won ! 🏆")
+
+
+    def first_attack(hero, monster):
+        attacker = random.choice([hero, monster]) # TODO chercher l'arme ds inventory
+        return attacker
