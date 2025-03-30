@@ -2,22 +2,24 @@
 import random
 from Character import Character
 
-
 class Monster(Character):
-    def __init__(self, name, health):
-        super().__init__(name, health)
+    def __init__(self, name, health, stamina, shield, foods):
+        super().__init__(name, health, stamina, shield, foods)
 
-    @staticmethod
     def create_monster(defaultName):
         print(f"Create your monster 🧌")
         name = input(f"Choose your name : ")
         health = random.randint(80, 100)
+        stamina = random.randint(40, 100)
+        shield = random.randint(1, 5)
+        foods = random.randint(1, 5)
+
         if not name:
-            monster1 = Monster(defaultName, health)
-            print(f"Your monster called {monster1.name} with a health {monster1.health}")
+            monster1 = Monster(defaultName, health, stamina, shield, foods)
+            print(f"Your monster called {monster1.name} with {monster1.health} HP and {monster1.stamina} of stamina.")
             return monster1            
-        monster1 = Monster(name, health)
-        print(f"Your monster called {monster1.name} with a health {monster1.health}")
+        monster1 = Monster(name, health, stamina, shield, foods)
+        print(f"Your monster called {monster1.name} with {monster1.health} HP and {monster1.stamina} of stamina.")
         return monster1
     
     # health monster
