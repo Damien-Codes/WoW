@@ -32,7 +32,7 @@ export-env {
       }
     }
 
-    let virtual_env = 'D:\Damien\Formation CDA\Cours\POO (Programmation Orienté Objet)\Jeu de role wow\.venv'
+    let virtual_env = 'C:\GIT\WoW\.venv'
     let bin = 'Scripts'
 
     let is_windows = ($nu.os-info.family) == 'windows'

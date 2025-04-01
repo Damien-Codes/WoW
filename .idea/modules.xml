@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Jeu de role wow.iml" filepath="$PROJECT_DIR$/Jeu de role wow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WoW.iml" filepath="$PROJECT_DIR$/.idea/WoW.iml" />
     </modules>
   </component>
 </project>

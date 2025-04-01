@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=D:\Damien\Formation CDA\Cours\POO (Programmation Orienté Objet)\Jeu de role wow\.venv"
+@set "VIRTUAL_ENV=C:\GIT\WoW\.venv"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (

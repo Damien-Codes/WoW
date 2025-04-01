@@ -1,14 +1,12 @@
 #import
-import random
+from src.char.Character import Character
+from src.char.Hero import Hero
+from src.char.Monster import Monster
+from src.stack.Food import Food
+from src.stack.Shield import Shield
+from src.weapon.Club import Club
+from src.weapon.Sword import Sword
 
-from Club import Club
-from Hero import Hero
-from Monster import Monster
-from Sword import Sword
-from Character import Character
-from Food import Food
-from Shield import Shield
-from Inventory import Inventory
 
 class Game:
 
@@ -34,7 +32,7 @@ class Game:
         # Display the Hero Inventory
         print(hero.Inventory)
 
-        # Create Monster
+        # Create Monste
         monster = Monster.create_monster("Macron")
 
         # Add a Club to Inventory
