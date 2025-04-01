@@ -17,16 +17,18 @@ yarn-error.log*
 node_modules/
 dist/
 build/
+out/
 
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
+*.pyc
 *.egg-info/
 .env
 
 # Environnements
 .venv/
-.env
 *.env
 
 # IDEs / Éditeurs
