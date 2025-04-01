@@ -1,6 +1,6 @@
 # import
 import random
-from Bag import Bag
+from Inventory import Inventory
 
 class Character:
     def __init__(self, name, health, stamina, shield, foods):
@@ -10,8 +10,8 @@ class Character:
         self._shield = shield
         self._foods = foods
         self._weapon = None
-        self.inventory = [self.weapon, shield, foods]
-        self.bag = Bag()
+        self.inventory_Items = [self.weapon, shield, foods]
+        self.Inventory = Inventory(name="Inventory of " + name, weight=10)
 
     # Getters
     @property
@@ -39,14 +39,13 @@ class Character:
         if isinstance(new_name, str) and len(new_name) > 0:
             self._name = new_name
         else:
-            raise ValueError (f"Error : The name must be a non-empty string.")
+            raise ValueError("Error : The name must be a non-empty string.")
     @health.setter
     def health(self, new_health):
         self._health = new_health
     @weapon.setter
     def weapon(self, new_weapon):
         self._weapon = new_weapon
-
     @stamina.setter
     def stamina(self, new_stamina):
         if isinstance(new_stamina, (int, float)) and new_stamina >= 0:
@@ -59,65 +58,48 @@ class Character:
     @foods.setter
     def foods(self, new_foods):
         self._foods = new_foods
-
-
-
-    # Méthod
     def attack(self, target):
-        if self.bag.weapon:
+        if self.Inventory.weapon:
             damage = random.randint(25, 30)
             target.health = target.health - damage
             return damage
         else:
-            print(f"{self.name} has no weapon for attacker.")
+            print(f"{self.name} has no weapon for attacking.")
             return 0
-
+        
+    # method
     def isAlive(self):
         return self.health > 0
-    
-    
+
     def fight(hero, monster):
-        # random attacker
         attacker = Character.first_attack(hero, monster)
         print(f"{attacker.name} attacks first !")
 
         if attacker == hero:
             while True:
-                # attack hero
                 damage_hero = hero.attack(monster)
-                print(f"{hero.name} inflicts  {damage_hero} damage at {monster.name}.")
-
+                print(f"{hero.name} inflicts {damage_hero} damage on {monster.name}.")
                 if not monster.isAlive():
                     break
-
-                # Monster attack
                 damage_monster = monster.attack(hero)
-                print(f"{monster.name} inflicts {damage_monster} damage at {hero.name}.")
-
+                print(f"{monster.name} inflicts {damage_monster} damage on {hero.name}.")
                 if not hero.isAlive():
                     break
         else:
             while True:
-                # Monster attack
                 damage_monster = monster.attack(hero)
-                print(f"{monster.name} inflicts {damage_monster} damage at {hero.name}.")
-
+                print(f"{monster.name} inflicts {damage_monster} damage on {hero.name}.")
                 if not hero.isAlive():
                     break
-
-                # Hero attack
                 damage_hero = hero.attack(monster)
-                print(f"{hero.name} inflicts {damage_hero} damage at {monster.name}.")
-
+                print(f"{hero.name} inflicts {damage_hero} damage on {monster.name}.")
                 if not monster.isAlive():
                     break
 
         if monster.isAlive():
-            print(f"{hero.name} is dead ! 💀  {monster.name} won ! 🏆")
+            print(f"{hero.name} is dead! 💀 {monster.name} won! 🏆")
         if hero.isAlive():
-            print(f"{monster.name} is dead ! 💀  {hero.name} won ! 🏆")
-
+            print(f"{monster.name} is dead! 💀 {hero.name} won! 🏆")
 
     def first_attack(hero, monster):
-        attacker = random.choice([hero, monster]) # TODO chercher l'arme ds inventory
-        return attacker
+        return random.choice([hero, monster])

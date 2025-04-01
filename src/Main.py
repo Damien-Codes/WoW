@@ -1,4 +1,4 @@
-# import
+#import
 import random
 
 from Club import Club
@@ -8,65 +8,62 @@ from Sword import Sword
 from Character import Character
 from Food import Food
 from Shield import Shield
-
+from Inventory import Inventory
 
 class Game:
-       
+
     @staticmethod
     def start_game():
         # Create Hero
         hero = Hero.create_hero("Trump")
-        # Add a Sword to bag
+
+        # Add a Sword to Inventory
         sword = Sword.create_sword("Epee")
-        hero.bag.add_weapon(sword)
-        # Add a Shield to bag
+        hero.Inventory.add_weapon(sword)
+
+        # Add a Shield to Inventory
         shields = Shield.create_shield()
         for shield_h in shields:
-            hero.bag.add_shield(shield_h)
-        # Add a Food to bag
+            hero.Inventory.add_shield(shield_h)
+
+        # Add a Food to Inventory
         foods = Food.create_food()
         for food_h in foods:
-            hero.bag.add_food(food_h)
-        # Display the Hero bag
-        print(hero.bag)
+            hero.Inventory.add_food(food_h)
+
+        # Display the Hero Inventory
+        print(hero.Inventory)
 
         # Create Monster
         monster = Monster.create_monster("Macron")
-        # Add a Sword to bag
+
+        # Add a Club to Inventory
         club = Club.create_club("Gourdin")
-        monster.bag.add_weapon(club)
-        # Add a Shield to bag
-        shields = Shield.create_shield()  # Liste de 0, 1 ou plusieurs boucliers
+        monster.Inventory.add_weapon(club)
+
+        # Add a Shield to Inventory
+        shields = Shield.create_shield()
         for shield_m in shields:
-            monster.bag.add_shield(shield_m)
-        # Add a Food to bag
+            monster.Inventory.add_shield(shield_m)
+
+        # Add a Food to Inventory
         foods = Food.create_food()
         for food_m in foods:
-            monster.bag.add_food(food_m)
-        # Display the Monster bag
-        print (monster.bag)
+            monster.Inventory.add_food(food_m)
 
-        print(f"Start fight : {hero.name} used {hero.bag.weapon.name} against {monster.name} used {monster.bag.weapon.name}")
+        # Display the Monster Inventory
+        print(monster.Inventory)
+
+        print(f"Start fight: {hero.name} used {hero.Inventory.weapon.name} against {monster.name} using {monster.Inventory.weapon.name}")
         print(f"| --------------------------------------------- |")
         print(f"| Hero : {hero.name} | Health : {hero.health} | Stamina : {hero.stamina} |")
         print(f"| Monster : {monster.name} | Health : {monster.health} | Stamina : {monster.stamina} |")
         print(f"| --------------------------------------------- |")
 
-
         Character.fight(hero, monster)
 
-
-
-        print(hero.bag)
-        print(monster.bag)
-
-
-        # display the Food
-        #Food.create_food()
-        # display the shield
-        #shields = Shield.create_shield()
-        #for shield in shields:
-        #    print(shield)
+        print(hero.Inventory)
+        print(monster.Inventory)
 
 # Start the game
 Game.start_game()
