@@ -14,9 +14,9 @@ class Food(Inventory):
     def create_food():
         foods = [
             ("🍏 Apple", 100, 10),
-            ("🍇 Grape", 80, 8),
+            ("🍇 Grapes", 80, 8),
             ("🥩 Meat", 200, 15),
-            ("🍌 Banana", 150, 12),
+            ("🍌 Bananas", 150, 12),
         ]
         nb_foods = random.randint(0, 3)
         selected = random.sample(foods, nb_foods)
