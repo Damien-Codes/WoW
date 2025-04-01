@@ -32,7 +32,7 @@ class Game:
         # Display the Hero Inventory
         print(hero.Inventory)
 
-        # Create Monste
+        # Create Monster
         monster = Monster.create_monster("Macron")
 
         # Add a Club to Inventory

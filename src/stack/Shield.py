@@ -14,7 +14,7 @@ class Shield(Inventory):
     @staticmethod
     def create_shield():
         shields = [
-            ("🛡️ Fer Shield", 650, 5),
+            ("🛡️ Iron Shield", 650, 5),
             ("🛡️ Bronze shield", 600, 10),
             ("🛡️ Silver shield", 550, 15),
             ("🛡️ Gold shield", 500, 20),

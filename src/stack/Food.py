@@ -13,10 +13,10 @@ class Food(Inventory):
     @staticmethod
     def create_food():
         foods = [
-            ("🍏 Pomme", 100, 10),
-            ("🍇 Raisin", 80, 8),
-            ("🥩 Viande", 200, 15),
-            ("🍌 Bananes", 150, 12),
+            ("🍏 Apple", 100, 10),
+            ("🍇 Grape", 80, 8),
+            ("🥩 Meat", 200, 15),
+            ("🍌 Banana", 150, 12),
         ]
         nb_foods = random.randint(0, 3)
         selected = random.sample(foods, nb_foods)
