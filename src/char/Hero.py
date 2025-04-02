@@ -13,7 +13,7 @@ class Hero(Character):
         print(f"Create your Hero 🦸")
         name = input(f"Choose your name : ")
         health = random.randint(80, 100)
-        stamina = random.randint(40, 100)
+        stamina = random.randint(20, 25)
         shield = random.randint(1, 5)
         foods = random.randint(1, 5)
 

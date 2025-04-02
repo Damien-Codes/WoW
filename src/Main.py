@@ -1,4 +1,4 @@
-#import
+# import
 from src.char.Character import Character
 from src.char.Hero import Hero
 from src.char.Monster import Monster
@@ -17,51 +17,51 @@ class Game:
 
         # Add a Sword to Inventory
         sword = Sword.create_sword("Epee")
-        hero.Inventory.add_weapon(sword)
+        hero.inventory.add_weapon(sword)
 
         # Add a Shield to Inventory
         shields = Shield.create_shield()
         for shield_h in shields:
-            hero.Inventory.add_shield(shield_h)
+            hero.inventory.add_shield(shield_h)
 
-        # Add a Food to Inventory
+        # Add Food to Inventory
         foods = Food.create_food()
         for food_h in foods:
-            hero.Inventory.add_food(food_h)
+            hero.inventory.add_food(food_h)
 
-        # Display the Hero Inventory
-        print(hero.Inventory)
+        # Display Hero's Inventory
+        print(hero.inventory)
 
         # Create Monster
         monster = Monster.create_monster("Macron")
 
         # Add a Club to Inventory
         club = Club.create_club("Gourdin")
-        monster.Inventory.add_weapon(club)
+        monster.inventory.add_weapon(club)
 
         # Add a Shield to Inventory
         shields = Shield.create_shield()
         for shield_m in shields:
-            monster.Inventory.add_shield(shield_m)
+            monster.inventory.add_shield(shield_m)
 
-        # Add a Food to Inventory
+        # Add Food to Inventory
         foods = Food.create_food()
         for food_m in foods:
-            monster.Inventory.add_food(food_m)
+            monster.inventory.add_food(food_m)
 
-        # Display the Monster Inventory
-        print(monster.Inventory)
+        # Display Monster's Inventory
+        print(monster.inventory)
 
-        print(f"Start fight: {hero.name} used {hero.Inventory.weapon.name} against {monster.name} using {monster.Inventory.weapon.name}")
+        print(f"Start fight: {hero.name} used {hero.inventory.weapon.name} against {monster.name} using {monster.inventory.weapon.name}")
         print(f"| --------------------------------------------- |")
-        print(f"| Hero : {hero.name} | Health : {hero.health} | Stamina : {hero.stamina} |")
-        print(f"| Monster : {monster.name} | Health : {monster.health} | Stamina : {monster.stamina} |")
+        print(f"| Hero : {hero.name} | Health : {hero.health} | Stamina : {hero.stamina} | Shield : {hero.shield} |")
+        print(f"| Monster : {monster.name} | Health : {monster.health} | Stamina : {monster.stamina} | Shield : {monster.shield} |")
         print(f"| --------------------------------------------- |")
 
         Character.fight(hero, monster)
 
-        print(hero.Inventory)
-        print(monster.Inventory)
+        print(hero.inventory)
+        print(monster.inventory)
 
 # Start the game
 Game.start_game()

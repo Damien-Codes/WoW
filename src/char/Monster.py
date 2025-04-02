@@ -12,7 +12,7 @@ class Monster(Character):
         print(f"Create your monster 🧌")
         name = input(f"Choose your name : ")
         health = random.randint(80, 100)
-        stamina = random.randint(40, 100)
+        stamina = random.randint(20, 35)
         shield = random.randint(1, 5)
         foods = random.randint(1, 5)
 

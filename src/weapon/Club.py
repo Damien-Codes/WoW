@@ -12,7 +12,7 @@ class Club(Weapon):
 
     @staticmethod
     def create_club(defaultName):
-        damage = random.randint(12,28)
+        damage = random.randint(15,28)
         health = random.randint(90, 100)
         print(f"Create your weapon ⚔️")
         name = input(f"Choose your name : ")
